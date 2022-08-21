@@ -16,7 +16,7 @@ export default function ListPost() {
   const [posts, setPosts] = useState<ListPostPreview>();
 
   const getPost = async () => {
-    const result = await getListPost({ page, limit, filter: listPostPreview.filter})
+    const result = await getListPost({ page, limit, filter: listPostPreview.filter })
     dispatch(addPostPreview({ data: result.data, limit: limit, page: page, total: result.total, filter: listPostPreview.filter }))
   };
 
@@ -36,9 +36,11 @@ export default function ListPost() {
   return (
     <ListPostStyled>
       {
-        posts?.data.map(item => {
+        posts?.data.length ? posts?.data.map(item => {
           return <Card key={item.id} data={item} />
         })
+          :
+          listPostPreview.filter ? <h2>{`Post not found with the word: "${listPostPreview.filter}"`}</h2> : <h2>Not found post</h2>
       }
     </ListPostStyled>
   )
