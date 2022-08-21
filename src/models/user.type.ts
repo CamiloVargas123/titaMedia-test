@@ -29,3 +29,18 @@ export const UserEmptyState: User = {
   email_verified: false,
   picture: ''
 };
+
+export interface ApiUserPreview {
+  id: string
+  title: string
+  firstName: string
+  lastName: string
+  picture: string
+}
+export interface UserPreview {
+  id: string
+  title: string
+  firstName: string
+  lastName: string
+  picture: string
+}
