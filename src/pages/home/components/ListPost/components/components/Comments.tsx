@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ListComment } from "src/models/comment.type"
+import { ListComment } from "src/models"
 import { formatDate } from "src/utils/formatDate"
 import { getCommentById } from "../services/getCommentById"
 import { CardHeader } from "../styled-components/cardPost.styled"
@@ -34,7 +34,7 @@ export default function Comments({ idPost }: Props) {
                   <p>{`${item.owner?.firstName ?? ""} ${item.owner?.lastName ?? ""}`}</p>
                 </CardHeader>
                 <p>{item.message}</p>
-                <p style={{ textAlign: "right", fontSize: ".8rem" }}>{`Date: ${formatDate(item.publishDate)}`}</p>
+                <p style={{ textAlign: "right", fontSize: ".8rem" }}>{`Date: ${formatDate({ date: item.publishDate, format: 'DD/MM/YYYY HH:mm' })}`}</p>
               </CommentsContentStyled>
             )
           })

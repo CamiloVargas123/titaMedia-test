@@ -15,6 +15,7 @@ export const CardHeader = styled.header`
   gap: .5rem;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  cursor: pointer;
   img {
     object-fit: cover;
     border-radius: 100%;

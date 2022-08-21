@@ -1,4 +1,5 @@
-import { ApiListComment, ListComment } from "src/models/comment.type";
+import { ApiListComment, ListComment } from "src/models";
+
 
 export const commentAdapter = (data: ApiListComment): ListComment => {
   return {

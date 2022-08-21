@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ListComment } from "src/models/comment.type";
+import { ListComment } from "src/models";
 import { commentAdapter } from "../adapter/comment.adapter";
 
 interface params {

@@ -1,5 +1,8 @@
 import moment from "moment";
-
-export function formatDate(date: string) {
-  return moment(date).format('DD/MM/YYYY HH:mm')
+interface format {
+  date: string
+  format: string
+}
+export function formatDate({date, format}:format) {
+  return moment(date).format(format)
 }

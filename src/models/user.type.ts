@@ -1,3 +1,5 @@
+import { ApiLocation, Location } from "./location.type";
+
 export interface ApiUser {
   given_name?: string;
   family_name?: string;
@@ -43,4 +45,30 @@ export interface UserPreview {
   firstName: string
   lastName: string
   picture: string
+}
+export interface ApiUserFull {
+  id: string
+  title: string
+  firstName: string
+  lastName: string
+  gender: string
+  email: string
+  dateOfBirth: string
+  registerDate: string
+  phone: string
+  picture: string
+  location: ApiLocation
+}
+export interface UserFull {
+  id: string
+  title: string
+  firstName: string
+  lastName: string
+  gender: string
+  email: string
+  dateOfBirth: string
+  registerDate: string
+  phone: string
+  picture: string
+  location: Location
 }
