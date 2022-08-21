@@ -1,3 +1,4 @@
+import { ListResponse } from "."
 import { UserPreview } from "./user.type"
 
 export interface ApiComment {
@@ -7,6 +8,9 @@ export interface ApiComment {
   post: string
   publishDate: string
 }
+export interface ApiListComment extends ListResponse {
+  data: ApiComment[]
+}
 
 export interface Comment {
   id: string
@@ -15,8 +19,11 @@ export interface Comment {
   post: string
   publishDate: string
 }
+export interface ListComment extends ListResponse {
+  data: Comment[]
+}
 
-export const CommentEmptyState: Comment =  {
+export const CommentEmptyState: Comment = {
   id: '',
   message: '',
   owner: null,

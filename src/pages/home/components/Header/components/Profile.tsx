@@ -1,9 +1,7 @@
-
-
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from "react-redux";
 import { AppStore } from "src/redux/store";
-import { Buttons } from "src/styled-components/buttons";
+import { Buttons } from "src/styled-components/buttons.styled";
 import { PhotoProfile, ProfileData, ProfileHeader } from "../styled-components/profile";
 
 export default function Profile() {

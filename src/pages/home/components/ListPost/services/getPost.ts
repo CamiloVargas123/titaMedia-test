@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PostPreview, ListPostPreview } from "src/models/post.type";
+import { ListPostPreview } from "src/models/post.type";
 import { getPostAdapter } from "../adapter/getPost.adapter";
 
 interface params {

@@ -40,4 +40,21 @@ export const CardContent = styled.div`
 export const CardFooter = styled.footer`
   display: flex;
   justify-content: space-between;
+  p {
+    :last-child {
+      cursor: pointer;
+      &:hover{
+        color: blue;
+      }
+    }
+  }
+`;
+export const TruncatedText = styled.p`
+  min-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  line-clamp: 2; 
+  -webkit-box-orient: vertical;
 `;
