@@ -11,12 +11,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -42,6 +36,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

@@ -5,7 +5,9 @@ import { getPostAdapter } from "../adapter/getPost.adapter";
 interface params {
   page: number
   limit: number
+  filter?: string
 }
-export const getListPost = async ({ page, limit }: params): Promise<ListPostPreview> => {
+export const getListPost = async ({ page, limit, filter }: params): Promise<ListPostPreview> => {
+  if(filter) return axios.get(`/tag/${filter}/post?page=${page}&limit=${limit}`).then(res => getPostAdapter(res.data))
   return axios.get(`/post?page=${page}&limit=${limit}`).then(res => getPostAdapter(res.data))
 }

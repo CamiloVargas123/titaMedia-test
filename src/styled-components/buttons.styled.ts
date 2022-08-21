@@ -7,7 +7,7 @@ interface Props {
 export const Buttons = styled.button<Props>`
   background: ${props => props.primary ? "black" : "white"};
   color: ${props => props.primary ? "white" : "black"};
-
+  width: max-content;
   font-size: 1em;
   padding: 0.25em 1em;
   border: 1px solid black;

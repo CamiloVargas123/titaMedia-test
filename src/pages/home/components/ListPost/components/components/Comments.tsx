@@ -33,8 +33,8 @@ export default function Comments({ idPost }: Props) {
                   <img src={item.owner?.picture} />
                   <p>{`${item.owner?.firstName ?? ""} ${item.owner?.lastName ?? ""}`}</p>
                 </CardHeader>
-                <p>{item.message}</p>
-                <p style={{ textAlign: "right", fontSize: ".8rem" }}>{`Date: ${formatDate({ date: item.publishDate, format: 'DD/MM/YYYY HH:mm' })}`}</p>
+                <p>{`Comment: ${item.message}`}</p>
+                <p style={{ textAlign: "right", fontSize: ".8rem" }}>{`Publish Date: ${formatDate({ date: item.publishDate, format: 'DD/MM/YYYY HH:mm' })}`}</p>
               </CommentsContentStyled>
             )
           })

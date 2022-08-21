@@ -14,9 +14,12 @@ export const postPreview = createSlice({
     },
     resetPostPreview: () => {
       return ListPostPreviewEmptyState;
+    },
+    filterPost: (state, action: PayloadAction<string>) => {
+      return { ...state, filter: action.payload }
     }
   }
 })
 
-export const { addPostPreview, modifyPostPreview, resetPostPreview } = postPreview.actions;
+export const { addPostPreview, modifyPostPreview, resetPostPreview, filterPost } = postPreview.actions;
 export default postPreview.reducer;

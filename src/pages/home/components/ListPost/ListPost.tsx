@@ -16,14 +16,17 @@ export default function ListPost() {
   const [posts, setPosts] = useState<ListPostPreview>();
 
   const getPost = async () => {
-    const result = await getListPost({ page, limit })
-    dispatch(addPostPreview({ data: result.data, limit: limit, page: page, total: result.total }))
-    //setPosts(result);
+    const result = await getListPost({ page, limit, filter: listPostPreview.filter})
+    dispatch(addPostPreview({ data: result.data, limit: limit, page: page, total: result.total, filter: listPostPreview.filter }))
   };
 
   useEffect(() => {
     getPost();
   }, [])
+
+  useEffect(() => {
+    getPost()
+  }, [listPostPreview.filter])
 
   useEffect(() => {
     setPosts(listPostPreview)

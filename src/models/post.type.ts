@@ -24,12 +24,14 @@ export interface PostPreview {
   owner: ApiUserPreview | null
 }
 export interface ListPostPreview extends ListResponse {
-  data: PostPreview[]
+  data: PostPreview[],
+  filter: string
 }
 
 export const ListPostPreviewEmptyState: ListPostPreview = {
   limit: 0,
   page: 0,
   total: 0,
-  data: []
+  data: [],
+  filter: '',
 };
