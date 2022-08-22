@@ -1,4 +1,4 @@
-import { ApiListPostPreview, ListPostPreview, PostPreview } from "src/models/post.type";
+import { ApiListPostPreview, ListPostPreview } from "src/models/post.type";
 
 
 export const getPostAdapter = (data: ApiListPostPreview): ListPostPreview => {
@@ -6,6 +6,7 @@ export const getPostAdapter = (data: ApiListPostPreview): ListPostPreview => {
     limit: data.limit,
     page: data.page,
     total: data.total,
+    filter: '',
     data: data.data.map(res => {
       return {
         id: res.id,
