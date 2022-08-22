@@ -1,15 +1,14 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { modifyPostPreview } from "src/redux/slices/postPreview.slice";
-import { AppStore } from "src/redux/store";
+import { modifyPostPreview, selectListPostPreview } from "src/redux/slices/postPreview.slice";
 import { SearchForm, SearchInput } from "../styled-components/seatch.styled";
 interface Search {
   filter: string
 }
 export default function () {
   const dispatch = useDispatch()
-  const listPostPreview = useSelector((state: AppStore) => state.listPostPreview)
+  const listPostPreview = useSelector(selectListPostPreview)
 
   const { register, handleSubmit, setValue } = useForm<Search>({ mode: "onSubmit" });
 

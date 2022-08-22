@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addPostPreview, modifyPostPreview } from "src/redux/slices/postPreview.slice";
-import { AppStore } from "src/redux/store";
+import { addPostPreview, modifyPostPreview, selectListPostPreview } from "src/redux/slices/postPreview.slice";
 import Card from "./components/Card";
 import { getListPost } from "./services/getPost";
 import { ListPostStyled } from "./styled-components/listPost.styled";
@@ -9,7 +8,7 @@ import { Buttons } from "src/styled-components/buttons.styled";
 
 export default function ListPost() {
   const dispatch = useDispatch();
-  const listPostPreview = useSelector((state: AppStore) => state.listPostPreview)
+  const listPostPreview = useSelector(selectListPostPreview)
 
   const getPost = async (isLoadMore: boolean) => {
     const result = await getListPost({ page: listPostPreview.page, limit: listPostPreview.limit, filter: listPostPreview.filter.length ? listPostPreview.filter : undefined })

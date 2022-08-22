@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ListPostPreview, ListPostPreviewEmptyState } from 'src/models/post.type';
+import { RootState } from '../store';
 
 export const postPreview = createSlice({
   name: 'listPostPreview',
@@ -19,4 +20,5 @@ export const postPreview = createSlice({
 })
 
 export const { addPostPreview, modifyPostPreview, resetPostPreview } = postPreview.actions;
+export const selectListPostPreview = (state: RootState) => state.postPreviewReducer
 export default postPreview.reducer;

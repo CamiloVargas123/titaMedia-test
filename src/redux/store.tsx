@@ -1,15 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { User, ListPostPreview } from 'src/models';
-import { userReducer, postPreviewReducer } from './slices';
+import rootReducer from './slices';
 
-export interface AppStore {
-  user: User;
-  listPostPreview: ListPostPreview
-}
+const IS_DEV = import.meta.env.DEV
 
-export default configureStore<AppStore>({
-  reducer: {
-    user: userReducer,
-    listPostPreview: postPreviewReducer,
-  }
-});
+const store = configureStore({
+  reducer: rootReducer,
+  devTools: IS_DEV
+})
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
+
+export default store
