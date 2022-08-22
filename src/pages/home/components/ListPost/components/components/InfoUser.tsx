@@ -25,8 +25,8 @@ export default function InfoUser({ idUser }: Props) {
 
   return (
     <UserFullStyled>
-      <CardHeader style={{ fontSize: "1.5rem" }}>
-        <img src={userFull.picture} style={{ width: "50px" }} />
+      <CardHeader style={{ fontSize: "1.8rem" }}>
+        <img src={userFull.picture} style={{ width: "60px" }} />
         <p style={{ textTransform: "capitalize" }}>{`${userFull.title} ${userFull.firstName ?? ""} ${userFull.lastName ?? ""}`}</p>
       </CardHeader>
       <UserFullContent>

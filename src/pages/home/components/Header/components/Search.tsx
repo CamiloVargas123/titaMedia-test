@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { filterPost } from "src/redux/slices/postPreview.slice";
+import { modifyPostPreview } from "src/redux/slices/postPreview.slice";
 import { AppStore } from "src/redux/store";
-import { Buttons } from "src/styled-components/buttons.styled";
 import { SearchForm, SearchInput } from "../styled-components/seatch.styled";
-
 interface Search {
   filter: string
 }
@@ -16,11 +14,11 @@ export default function () {
   const { register, handleSubmit, setValue } = useForm<Search>({ mode: "onSubmit" });
 
   function onSubmit({ filter }: Search) {
-    dispatch(filterPost(filter))
+    dispatch(modifyPostPreview({ ...listPostPreview, filter: filter, page: 0 }))
   }
 
   function clearFilter() {
-    dispatch(filterPost(''))
+    dispatch(modifyPostPreview({ ...listPostPreview, filter: '', page: 0 }))
   }
 
   useEffect(() => {
@@ -32,7 +30,7 @@ export default function () {
     <SearchForm onSubmit={handleSubmit(onSubmit)}>
       <SearchInput type="text" placeholder="Search" {...register("filter")} />
       {
-        listPostPreview.filter && <button onClick={clearFilter}>x</button>
+        listPostPreview.filter && <span onClick={clearFilter}>x</span>
       }
     </SearchForm>
   )

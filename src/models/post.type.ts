@@ -29,7 +29,7 @@ export interface ListPostPreview extends ListResponse {
 }
 
 export const ListPostPreviewEmptyState: ListPostPreview = {
-  limit: 0,
+  limit: 20,
   page: 0,
   total: 0,
   data: [],

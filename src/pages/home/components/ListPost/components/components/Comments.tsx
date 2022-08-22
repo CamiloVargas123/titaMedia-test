@@ -28,8 +28,8 @@ export default function Comments({ idPost }: Props) {
           :
           comment?.data.map(item => {
             return (
-              <CommentsContentStyled>
-                <CardHeader key={item.id}>
+              <CommentsContentStyled key={item.id}>
+                <CardHeader>
                   <img src={item.owner?.picture} />
                   <p>{`${item.owner?.firstName ?? ""} ${item.owner?.lastName ?? ""}`}</p>
                 </CardHeader>

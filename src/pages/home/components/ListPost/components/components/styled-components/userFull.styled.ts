@@ -5,15 +5,13 @@ export const UserFullStyled = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 1.3rem;
-  min-width: 300px;
-  overflow-y: auto;
-  max-height: 450px;
 `;
 
 export const UserFullContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: .3rem;
+  width: 100%;
 `;
 
 export const UserFullLocation = styled.div`

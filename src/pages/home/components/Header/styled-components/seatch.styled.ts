@@ -6,13 +6,15 @@ export const SearchForm = styled.form`
   border: 1px solid black;
   display: flex;
   border-radius: 3px;
-  button {
+  span {
     border: none;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     background-color: white;
     cursor: pointer;
     padding-inline: .5rem;
+    display: flex;
+    align-items: center;
     &:hover{
       background-color: #cecece;
     }
